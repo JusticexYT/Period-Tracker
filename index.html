@@ -676,6 +676,8 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
       <div class="form-group"><label>Trying to conceive?</label>
         <select id="s-ttc"><option value="no">No</option><option value="yes">Yes</option></select>
       </div>
+      <div class="form-group"><label>Fertile window starts on cycle day #</label><input type="number" id="s-fertileday" value="10" min="1" max="30" title="Which day of the cycle does the fertile window begin?"></div>
+      <div class="form-group"><label>Ovulation on cycle day #</label><input type="number" id="s-ovday" value="15" min="1" max="35" title="Which cycle day does ovulation occur?"></div>
       <div class="form-group"><label>Water goal (glasses/day)</label><input type="number" id="s-watergoal" value="8" min="4" max="20"></div>
       <div class="form-group"><label>Step goal (daily)</label><input type="number" id="s-stepgoal" value="10000" min="1000" max="50000"></div>
     </div>
@@ -727,6 +729,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 // STATE
 // ══════════════════════════════════════════
 const DEF={pin:'',name:'',appName:'Luna',hue:340,cycleLength:28,periodLength:5,lastPeriodDate:'',waterGoal:8,stepGoal:10000,ttc:'no',
+  fertileStartDay:10,ovDay:15,
   phaseNames:{period:'',follicular:'',fertile:'',ovulation:'','luteal-early':'',luteal:''},
   medications:[],logs:{},journal:[],cycles:[],historicalCycles:[],imported:false};
 let S=JSON.parse(JSON.stringify(DEF));
@@ -803,18 +806,46 @@ function showPage(name){
 function refreshAll(){updateHome();}
 
 // ══ CYCLE MATH ══
-function today(){return new Date().toISOString().split('T')[0];}
+// ── DATE HELPERS (Aruba = UTC-4, always) ──
+// We never use toISOString() for "today" because that uses UTC and can be yesterday in UTC-4.
+// Instead we read the local clock components directly.
+function today(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+// Parse a YYYY-MM-DD string as a pure local date (no timezone shift).
+function parseLocalDate(ds){
+  if(!ds)return null;
+  const [y,m,d]=ds.split('-').map(Number);
+  return new Date(y,m-1,d);
+}
+// Difference in whole days between two YYYY-MM-DD strings (b - a).
+function daysBetween(aStr,bStr){
+  return Math.round((parseLocalDate(bStr)-parseLocalDate(aStr))/86400000);
+}
+
+// ── CYCLE MATH ──
+// Her fertile window starts every 22 days from last known fertile start.
+// Her ovulation occurs every 28 days from last known ovulation.
+// Last period started: Apr 27, 2026
+// Last fertile window started: May 6, 2026  (day 10 of that cycle)
+// Last ovulation: May 11, 2026              (day 15 of that cycle)
+// So within any cycle: fertile starts on day 10, ovulation on day 15,
+// fertile window spans days 10–14 (5 days), luteal phase starts day 16.
+// We derive fertileStartDay and ovDay relative to period start.
+function getFertileStartDay(){return S.fertileStartDay||10;}
+function getOvDay(){return S.ovDay||15;}
+
 function getCycleDay(){
   if(!S.lastPeriodDate)return 1;
-  const start=new Date(S.lastPeriodDate);start.setHours(0,0,0,0);
-  const now=new Date();now.setHours(0,0,0,0);
-  const diff=Math.floor((now-start)/86400000);
-  return(diff%S.cycleLength)+1;
+  const diff=daysBetween(S.lastPeriodDate,today());
+  const cd=((diff%S.cycleLength)+S.cycleLength)%S.cycleLength;
+  return cd+1;
 }
 function getPhase(day){
-  const cl=S.cycleLength,pl=S.periodLength,ov=Math.round(cl/2);
+  const pl=S.periodLength,fsd=getFertileStartDay(),ov=getOvDay();
   if(day<=pl)return 'period';
-  if(day<ov-4)return 'follicular';
+  if(day<fsd)return 'follicular';
   if(day<ov)return 'fertile';
   if(day===ov)return 'ovulation';
   if(day<=ov+3)return 'luteal-early';
@@ -861,9 +892,10 @@ function updateHome(){
   if(lg.mood)parts.push('Mood: '+lg.mood);
   if(lg.symptoms&&lg.symptoms.length)parts.push(lg.symptoms.slice(0,3).join(', '));
   document.getElementById('home-today-log').textContent=parts.length?parts.join(' · '):(lg.flow?'Logged ✓':'Nothing logged yet today.');
-  const ovDay=Math.round(S.cycleLength/2),dToOv=ovDay-day;
+  const fsd=getFertileStartDay(),ovDay=getOvDay(),dToOv=ovDay-day,dToFertile=fsd-day;
   document.getElementById('home-upcoming').innerHTML=
     `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--rose-deep);flex-shrink:0"></span><span>Period in ~${dLeft} day${dLeft===1?'':'s'}</span></div>`+
+    `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint);flex-shrink:0"></span><span>${dToFertile>0?'Fertile window in ~'+dToFertile+' day'+(dToFertile===1?'':'s'):dToFertile<=0&&dToOv>0?'Fertile window now 🌿':'Fertile window passed'}</span></div>`+
     `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint-deep);flex-shrink:0"></span><span>${dToOv>0?'Ovulation in ~'+dToOv+' day'+(dToOv===1?'':'s'):dToOv===0?'Ovulation today 🌿':'Ovulation was '+Math.abs(dToOv)+' day'+(Math.abs(dToOv)===1?'':'s')+' ago'}</span></div>`;
   document.getElementById('care-title').textContent='✦ Self-care for '+phaseName(phase);
   document.getElementById('care-list').innerHTML=info.care.map(c=>`<div class="care-item">${c}</div>`).join('');
@@ -974,24 +1006,24 @@ function changeMonth(d){
 }
 function getDayClass(ds){
   if(!S.lastPeriodDate)return '';
-  const target=new Date(ds);target.setHours(0,0,0,0);
   const lg=S.logs[ds];
   if(lg&&lg.flow&&lg.flow!=='none')return lg.flow==='heavy'?'period-heavy':'period';
-  // Check historical cycles
+  const pl=S.periodLength,cl=S.cycleLength;
+  const fsd=getFertileStartDay(); // day within cycle when fertile window starts
+  const ov=getOvDay();            // day within cycle when ovulation occurs
+  // Check historical period starts — mark actual logged period days
   const allStarts=getAllPeriodStarts();
   for(const startStr of allStarts){
-    const start=new Date(startStr);start.setHours(0,0,0,0);
-    const diff=Math.floor((target-start)/86400000);
-    if(diff>=0&&diff<S.periodLength)return 'period';
+    const diff=daysBetween(startStr,ds);
+    if(diff>=0&&diff<pl)return 'period';
   }
-  // Predicted from lastPeriodDate
-  const start=new Date(S.lastPeriodDate);start.setHours(0,0,0,0);
-  const cl=S.cycleLength,pl=S.periodLength,ov=Math.round(cl/2);
-  const diff=Math.floor((target-start)/86400000);
-  const cd=((diff%cl)+cl)%cl;
+  // Predicted: use lastPeriodDate as anchor, project forward/backward by cycleLength
+  const diff=daysBetween(S.lastPeriodDate,ds);
+  const cd=((diff%cl)+cl)%cl; // day within cycle (0-indexed)
+  const dayNum=cd+1;           // 1-indexed cycle day
   if(cd<pl)return 'predicted';
-  if(cd>=ov-4&&cd<ov)return 'fertile';
-  if(cd===ov)return 'ovulation';
+  if(dayNum>=fsd&&dayNum<ov)return 'fertile';
+  if(dayNum===ov)return 'ovulation';
   return '';
 }
 function getAllPeriodStarts(){
@@ -1021,7 +1053,8 @@ function renderCalendar(){
 }
 function showCalDay(ds){
   const det=document.getElementById('cal-detail');det.style.display='block';
-  const dt=new Date(ds);
+  // Use parseLocalDate so Aruba timezone doesn't shift the day back
+  const dt=parseLocalDate(ds);
   document.getElementById('cal-detail-date').textContent=dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   const lg=S.logs[ds];
   // Also check historical cycle
@@ -1081,7 +1114,7 @@ function renderHistory(){
     </tr>`;
   }).join('');
 }
-function fmtDate(ds){if(!ds)return'—';try{return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch{return ds;}}
+function fmtDate(ds){if(!ds)return'—';try{return parseLocalDate(ds).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch{return ds;}}
 function openAddCycle(){document.getElementById('add-cycle-form').style.display='block';}
 function closeAddCycle(){document.getElementById('add-cycle-form').style.display='none';}
 function saveNewCycle(){
@@ -1207,6 +1240,8 @@ function populateSettings(){
   document.getElementById('s-watergoal').value=S.waterGoal||8;
   document.getElementById('s-stepgoal').value=S.stepGoal||10000;
   document.getElementById('s-ttc').value=S.ttc||'no';
+  document.getElementById('s-fertileday').value=S.fertileStartDay||10;
+  document.getElementById('s-ovday').value=S.ovDay||15;
   const pn=S.phaseNames||{};
   ['period','follicular','fertile','ovulation','luteal-early','luteal'].forEach(p=>{const el=document.getElementById('pn-'+p);if(el)el.value=pn[p]||'';});
   document.querySelectorAll('.color-swatch').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.hue)===S.hue));
@@ -1237,6 +1272,8 @@ function saveSettings(){
   S.waterGoal=parseInt(document.getElementById('s-watergoal').value)||8;
   S.stepGoal=parseInt(document.getElementById('s-stepgoal').value)||10000;
   S.ttc=document.getElementById('s-ttc').value;
+  S.fertileStartDay=parseInt(document.getElementById('s-fertileday').value)||10;
+  S.ovDay=parseInt(document.getElementById('s-ovday').value)||15;
   const pn={};
   ['period','follicular','fertile','ovulation','luteal-early','luteal'].forEach(p=>{const el=document.getElementById('pn-'+p);if(el&&el.value.trim())pn[p]=el.value.trim();});
   S.phaseNames=pn;
@@ -1407,6 +1444,10 @@ function runHistoricalImport(){
         S.cycleLength=Math.round(recent.reduce((a,b)=>a+b,0)/recent.length);
       }
       // Set last period date to most recent
+      // Set fertile start day (day 10) and ovulation day (day 15) based on her data:
+      // Last period: Apr 27 → Fertile started May 6 (day 10) → Ovulation May 11 (day 15)
+      S.fertileStartDay=10;
+      S.ovDay=15;
       S.lastPeriodDate='2026-04-27';
       S.periodLength=6;// avg from data
       S.imported=true;
