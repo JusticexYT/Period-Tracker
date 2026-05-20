@@ -28,7 +28,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   background-image:radial-gradient(circle at 10% 15%,hsla(var(--hue),80%,88%,0.4) 0%,transparent 40%),
   radial-gradient(circle at 90% 80%,hsla(calc(var(--hue) - 30),80%,88%,0.3) 0%,transparent 40%);}
 
-/* ── PIN ── */
+/* PIN */
 #pin-screen{position:fixed;inset:0;background:var(--cream);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;}
 #pin-screen.hidden{display:none;}
 .pin-title{font-family:'Fraunces',serif;font-size:2rem;color:var(--rose-deep);text-align:center;}
@@ -42,7 +42,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .pin-key:active{transform:scale(0.95);}
 .pin-error{color:#C04060;font-size:0.85rem;min-height:1.2em;text-align:center;}
 
-/* ── PARTNER ── */
+/* PARTNER */
 #partner-screen{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:9990;display:none;overflow-y:auto;align-items:center;justify-content:center;}
 #partner-screen.active{display:flex;}
 .partner-card{max-width:400px;width:90%;margin:2rem auto;padding:2rem;background:var(--white);border-radius:24px;border:1px solid var(--border);box-shadow:0 12px 50px rgba(0,0,0,0.2);}
@@ -53,7 +53,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .partner-ring-text .sm{font-size:0.62rem;color:var(--text-muted);}
 .partner-tip{background:var(--rose-light);border-radius:14px;padding:1rem;font-size:0.85rem;line-height:1.7;margin-top:1rem;}
 
-/* ── NAV ── */
+/* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.5rem;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
 .logo{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:400;color:var(--rose-deep);cursor:pointer;font-style:italic;}
 .nav-scroll{display:flex;gap:0.2rem;overflow-x:auto;scrollbar-width:none;padding:0.28rem;background:var(--rose-light);border-radius:999px;}
@@ -64,20 +64,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .icon-btn{width:32px;height:32px;border-radius:9px;border:1px solid var(--border);background:var(--white);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
 .icon-btn:hover{background:var(--rose-light);}
 
-/* ── PAGES ── */
+/* PAGES */
 .page{display:none;padding:1.4rem;max-width:920px;margin:0 auto;}
 .page.active{display:block;animation:fadeIn 0.22s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── TYPE ── */
+/* TYPE */
 .section-title{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:400;color:var(--text);margin-bottom:1.1rem;letter-spacing:-0.02em;}
 .section-title em{color:var(--rose-deep);font-style:italic;}
 .card-label{font-size:0.68rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.75rem;}
 
-/* ── CARDS ── */
+/* CARDS */
 .card{background:var(--white);border-radius:18px;border:1px solid var(--border);padding:1.25rem;margin-bottom:0.9rem;box-shadow:0 3px 16px var(--shadow);}
 
-/* ── HOME ── */
+/* HOME */
 .home-hero{background:linear-gradient(135deg,var(--rose-light) 0%,hsl(calc(var(--hue)+30),70%,93%) 55%,hsl(140,50%,91%) 100%);border-radius:22px;padding:1.4rem;margin-bottom:0.9rem;border:1px solid var(--rose-border);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
 .hero-left h2{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:400;margin-bottom:0.3rem;}
 .hero-left p{font-size:0.83rem;color:var(--text-muted);line-height:1.6;max-width:300px;}
@@ -106,7 +106,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .ins-alert-title{font-weight:600;font-size:0.88rem;color:#B03050;margin-bottom:0.2rem;}
 .ins-alert-body{font-size:0.81rem;color:#7A3050;line-height:1.5;}
 
-/* ── LOG ── */
+/* LOG */
 .quick-menu{display:grid;grid-template-columns:repeat(7,1fr);gap:0.35rem;margin-bottom:0.9rem;}
 .qm-btn{display:flex;flex-direction:column;align-items:center;gap:0.2rem;padding:0.6rem 0.25rem;border-radius:13px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;transition:all 0.14s;font-size:0.6rem;color:var(--text-muted);font-weight:500;text-align:center;}
 .qm-btn .qi{font-size:1.2rem;display:block;}
@@ -114,7 +114,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .log-section{display:none;}
 .log-section.visible{display:block;animation:fadeIn 0.18s ease;}
 
-/* ── INPUTS ── */
+/* INPUTS */
 input[type=text],input[type=date],input[type=number],input[type=password],input[type=time],select,textarea{border:1.5px solid var(--border);border-radius:12px;padding:0.55rem 0.85rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;color:var(--text);outline:none;background:var(--white);transition:border-color 0.14s;width:100%;}
 input:focus,select:focus,textarea:focus{border-color:var(--rose-deep);}
 textarea{resize:vertical;line-height:1.6;}
@@ -123,7 +123,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .form-group{display:flex;flex-direction:column;}
 .form-group.full{grid-column:1/-1;}
 
-/* ── BUTTONS ── */
+/* BUTTONS */
 .btn{padding:0.7rem 1.4rem;border-radius:13px;font-family:'DM Sans',sans-serif;font-size:0.86rem;font-weight:500;cursor:pointer;transition:all 0.18s;border:none;width:100%;}
 .btn-primary{background:var(--rose-deep);color:white;}
 .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 5px 16px var(--shadow);}
@@ -132,7 +132,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .btn-danger{background:#FFF0F0;color:#B03050;border:1px solid #F5BFBF;}
 .btn-sm{padding:0.4rem 0.9rem;font-size:0.78rem;border-radius:10px;width:auto;}
 
-/* ── CHIPS ── */
+/* CHIPS */
 .chip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:0.45rem;margin-bottom:0.75rem;}
 .chip{padding:0.5rem 0.35rem;border-radius:11px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;text-align:center;font-size:0.74rem;color:var(--text-muted);transition:all 0.14s;user-select:none;}
 .chip .ce{font-size:1.15rem;display:block;margin-bottom:0.12rem;}
@@ -153,13 +153,13 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .flow-btn{flex:1;padding:0.5rem 0;border-radius:11px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:0.72rem;font-weight:500;color:var(--text-muted);text-align:center;transition:all 0.14s;}
 .flow-btn.selected{background:var(--rose-light);border-color:var(--rose-deep);color:var(--rose-deep);}
 
-/* ── SLIDER ── */
+/* SLIDER */
 .slider-wrap{display:flex;align-items:center;gap:0.7rem;}
 .slider-wrap input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none;border:none;padding:0;cursor:pointer;}
 .slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--rose-deep);cursor:pointer;box-shadow:0 2px 6px var(--shadow);}
 .slider-val{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--rose-deep);min-width:26px;text-align:center;}
 
-/* ── TOGGLE ── */
+/* TOGGLE */
 .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0;border-bottom:1px solid var(--border);}
 .toggle-row:last-child{border-bottom:none;}
 .toggle-name{font-size:0.86rem;font-weight:500;}
@@ -169,7 +169,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .toggle.on{background:var(--rose-deep);}
 .toggle.on::after{left:calc(100% - 21px);}
 
-/* ── CALENDAR ── */
+/* CALENDAR */
 .cal-nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.9rem;}
 .cal-nav-row h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:400;}
 .cal-arrow{background:none;border:1px solid var(--border);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:1rem;color:var(--text-muted);transition:all 0.13s;}
@@ -189,7 +189,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .leg-item{display:flex;align-items:center;gap:0.28rem;font-size:0.7rem;color:var(--text-muted);}
 .leg-dot{width:9px;height:9px;border-radius:50%;}
 
-/* ── HISTORY TABLE ── */
+/* HISTORY TABLE */
 .history-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
 .history-table th{padding:0.5rem 0.75rem;text-align:left;font-size:0.68rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-muted);border-bottom:2px solid var(--border);}
 .history-table td{padding:0.55rem 0.75rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top;}
@@ -201,7 +201,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .badge-long{background:var(--amber);color:#7A5E00;}
 .badge-vlong{background:var(--lavender);color:#4A358A;}
 
-/* ── INSIGHTS ── */
+/* INSIGHTS */
 .ins-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.85rem;margin-bottom:0.9rem;}
 .ins-tile{background:var(--white);border-radius:16px;border:1px solid var(--border);padding:1rem;}
 .ins-lbl{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);margin-bottom:0.28rem;}
@@ -216,14 +216,14 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .bar-cnt{font-size:0.7rem;color:var(--text-muted);min-width:18px;text-align:right;}
 .bbt-svg{width:100%;height:110px;}
 
-/* ── JOURNAL ── */
+/* JOURNAL */
 .journal-entry{background:var(--white);border-radius:16px;border:1px solid var(--border);padding:1.05rem 1.2rem;margin-bottom:0.7rem;}
 .journal-date{font-size:0.68rem;color:var(--text-light);margin-bottom:0.28rem;}
 .journal-text{font-size:0.86rem;line-height:1.7;}
 .journal-tags{display:flex;gap:0.28rem;flex-wrap:wrap;margin-top:0.45rem;}
 .jtag{padding:0.17rem 0.5rem;border-radius:999px;font-size:0.66rem;font-weight:500;}
 
-/* ── SETTINGS ── */
+/* SETTINGS */
 .color-picker-row{display:flex;gap:0.55rem;flex-wrap:wrap;margin-bottom:0.9rem;}
 .color-swatch{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform 0.13s;}
 .color-swatch.active{border-color:var(--text);transform:scale(1.15);}
@@ -238,7 +238,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .pill-check{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:var(--white);cursor:pointer;font-size:0.88rem;display:flex;align-items:center;justify-content:center;transition:all 0.14s;}
 .pill-check.taken{background:var(--mint-deep);border-color:var(--mint-deep);color:white;}
 
-/* ── IMPORT MODAL ── */
+/* IMPORT MODAL */
 #import-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:8000;display:none;align-items:center;justify-content:center;padding:1rem;}
 #import-modal.active{display:flex;}
 .import-box{background:var(--white);border-radius:22px;padding:2rem;max-width:500px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
@@ -246,13 +246,13 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 .import-box p{font-size:0.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;}
 .import-progress{background:var(--rose-light);border-radius:999px;height:8px;overflow:hidden;margin:0.75rem 0;}
 .import-bar{height:100%;background:var(--rose-deep);border-radius:999px;transition:width 0.3s;}
-.import-log{background:var(--cream);border-radius:12px;padding:0.85rem;font-size:0.76rem;color:var(--text-muted);max-height:160px;overflow-y:auto;margin-bottom:1rem;line-height:1.8;}
+.import-log{background:var(--cream);border-radius:12px;padding:0.85rem;font-size:0.76rem;color:var(--text-muted);max-height:160px;overflow-y:auto;margin-bottom:1rem;line-height:1.8;white-space:pre-wrap;}
 
-/* ── TOAST ── */
+/* TOAST */
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--text);color:white;padding:0.65rem 1.3rem;border-radius:999px;font-size:0.82rem;font-weight:500;opacity:0;transition:all 0.28s;z-index:9000;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:620px){
   .quick-menu{grid-template-columns:repeat(4,1fr);}
   .home-grid,.ins-grid,.form-row{grid-template-columns:1fr;}
@@ -265,7 +265,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
 </head>
 <body>
 
-<!-- ══ PIN SCREEN ══ -->
+<!-- PIN SCREEN -->
 <div id="pin-screen">
   <div class="pin-title" id="pin-app-name">Luna 🌸</div>
   <p class="pin-subtitle">Enter your PIN to continue</p>
@@ -285,12 +285,12 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
     <button class="pin-key" onclick="pinKey('9')">9</button>
     <button class="pin-key" onclick="pinKey('skip')" style="font-size:0.72rem;color:var(--text-muted)">Skip</button>
     <button class="pin-key" onclick="pinKey('0')">0</button>
-    <button class="pin-key" onclick="pinKey('back')">⌫</button>
+    <button class="pin-key" onclick="pinKey('back')">&#9003;</button>
   </div>
   <div class="pin-error" id="pin-error"></div>
 </div>
 
-<!-- ══ PARTNER OVERLAY ══ -->
+<!-- PARTNER OVERLAY -->
 <div id="partner-screen" onclick="closePartner(event)">
   <div class="partner-card">
     <div style="text-align:center;margin-bottom:1.5rem;">
@@ -312,7 +312,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ IMPORT MODAL ══ -->
+<!-- IMPORT MODAL -->
 <div id="import-modal">
   <div class="import-box">
     <h2>Importing your history 🌸</h2>
@@ -323,7 +323,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ MAIN APP ══ -->
+<!-- MAIN APP -->
 <div id="main-app">
 <nav class="nav">
   <div class="logo" onclick="showPage('home')" id="nav-logo">Luna</div>
@@ -342,7 +342,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </nav>
 
-<!-- ══ HOME ══ -->
+<!-- HOME -->
 <div class="page active" id="page-home">
   <p class="section-title">Hello, <em id="home-name">beautiful</em> 🌸</p>
   <div class="home-hero">
@@ -393,12 +393,12 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ LOG ══ -->
+<!-- LOG -->
 <div class="page" id="page-log">
   <p class="section-title"><em>What to</em> track today?</p>
   <div class="card" style="margin-bottom:0.7rem;">
     <div class="card-label">Date</div>
-    <input type="date" id="log-date">
+    <input type="date" id="log-date" onchange="autoSave()">
   </div>
   <div class="quick-menu">
     <button class="qm-btn" onclick="toggleSec('sym')"><span class="qi">🌀</span>Symptoms</button>
@@ -442,7 +442,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
     <div class="card-label" style="margin-top:0.5rem;">Pain level</div>
     <div class="slider-wrap">
       <span style="font-size:0.75rem;color:var(--text-muted)">None</span>
-      <input type="range" min="0" max="10" value="0" step="1" id="pain-slider" oninput="document.getElementById('pain-val').textContent=this.value">
+      <input type="range" min="0" max="10" value="0" step="1" id="pain-slider" oninput="document.getElementById('pain-val').textContent=this.value;autoSave()">
       <span style="font-size:0.75rem;color:var(--text-muted)">Severe</span>
       <span class="slider-val" id="pain-val">0</span>
     </div>
@@ -464,8 +464,8 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   <div class="log-section card" id="sec-tem">
     <div class="card-label">Basal Body Temperature (BBT)</div>
     <div class="form-row">
-      <div class="form-group"><label>Temperature (°C)</label><input type="number" id="log-temp" step="0.01" min="35" max="39" placeholder="e.g. 36.50"></div>
-      <div class="form-group"><label>Time taken</label><input type="time" id="log-temp-time"></div>
+      <div class="form-group"><label>Temperature (°C)</label><input type="number" id="log-temp" step="0.01" min="35" max="39" placeholder="e.g. 36.50" oninput="autoSave()"></div>
+      <div class="form-group"><label>Time taken</label><input type="time" id="log-temp-time" onchange="autoSave()"></div>
     </div>
     <p style="font-size:0.73rem;color:var(--text-muted);">💡 Take first thing in the morning before getting up.</p>
   </div>
@@ -473,22 +473,22 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
     <div class="card-label">Trying to Conceive</div>
     <div class="form-row">
       <div class="form-group"><label>Cervical mucus</label>
-        <select id="log-cm"><option value="">— Select —</option><option value="dry">Dry / None</option><option value="sticky">Sticky</option><option value="creamy">Creamy</option><option value="watery">Watery</option><option value="egg-white">Egg white (EWCM)</option></select>
+        <select id="log-cm" onchange="autoSave()"><option value="">— Select —</option><option value="dry">Dry / None</option><option value="sticky">Sticky</option><option value="creamy">Creamy</option><option value="watery">Watery</option><option value="egg-white">Egg white (EWCM)</option></select>
       </div>
       <div class="form-group"><label>Intercourse today?</label>
-        <select id="log-sex"><option value="">— Select —</option><option value="protected">Protected</option><option value="unprotected">Unprotected</option><option value="no">No</option></select>
+        <select id="log-sex" onchange="autoSave()"><option value="">— Select —</option><option value="protected">Protected</option><option value="unprotected">Unprotected</option><option value="no">No</option></select>
       </div>
       <div class="form-group"><label>OPK result</label>
-        <select id="log-opk"><option value="">— Not tested —</option><option value="negative">Negative</option><option value="almost">Almost positive</option><option value="positive">Positive (LH surge)</option></select>
+        <select id="log-opk" onchange="autoSave()"><option value="">— Not tested —</option><option value="negative">Negative</option><option value="almost">Almost positive</option><option value="positive">Positive (LH surge)</option></select>
       </div>
       <div class="form-group"><label>Cervix position</label>
-        <select id="log-cervix"><option value="">— Select —</option><option value="low-firm">Low & firm</option><option value="mid">Medium</option><option value="high-soft">High & soft (fertile)</option></select>
+        <select id="log-cervix" onchange="autoSave()"><option value="">— Select —</option><option value="low-firm">Low & firm</option><option value="mid">Medium</option><option value="high-soft">High & soft (fertile)</option></select>
       </div>
     </div>
   </div>
   <div class="log-section card" id="sec-ste">
     <div class="card-label">Steps today</div>
-    <input type="number" id="log-steps" placeholder="e.g. 8500" min="0" max="99999">
+    <input type="number" id="log-steps" placeholder="e.g. 8500" min="0" max="99999" oninput="autoSave()">
     <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.45rem;">Goal: <span id="steps-goal-lbl">10,000</span> steps</p>
   </div>
   <div class="log-section card" id="sec-sle">
@@ -497,7 +497,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
       <div class="form-group">
         <label>Hours of sleep</label>
         <div class="slider-wrap">
-          <input type="range" min="0" max="12" value="7" step="0.5" id="sleep-slider" oninput="document.getElementById('sleep-val').textContent=parseFloat(this.value).toFixed(1)">
+          <input type="range" min="0" max="12" value="7" step="0.5" id="sleep-slider" oninput="document.getElementById('sleep-val').textContent=parseFloat(this.value).toFixed(1);autoSave()">
           <span class="slider-val" id="sleep-val">7.0</span>
           <span style="font-size:0.75rem;color:var(--text-muted)">hrs</span>
         </div>
@@ -522,8 +522,8 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   <div class="card">
     <div class="card-label">Weight & note</div>
     <div class="form-row">
-      <div class="form-group"><label>Weight (kg)</label><input type="number" id="log-weight" step="0.1" placeholder="e.g. 62.5"></div>
-      <div class="form-group"><label>Quick note</label><input type="text" id="log-note-quick" placeholder="How are you feeling?"></div>
+      <div class="form-group"><label>Weight (kg)</label><input type="number" id="log-weight" step="0.1" placeholder="e.g. 62.5" oninput="autoSave()"></div>
+      <div class="form-group"><label>Quick note</label><input type="text" id="log-note-quick" placeholder="How are you feeling?" oninput="autoSave()"></div>
     </div>
   </div>
   <div class="card" id="med-log-card" style="display:none;">
@@ -533,7 +533,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   <button class="btn btn-primary" onclick="saveLog()">Save today's log ✨</button>
 </div>
 
-<!-- ══ CALENDAR ══ -->
+<!-- CALENDAR -->
 <div class="page" id="page-calendar">
   <p class="section-title">Your <em>cycle</em> calendar</p>
   <div class="card">
@@ -557,7 +557,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ HISTORY ══ -->
+<!-- HISTORY -->
 <div class="page" id="page-history">
   <p class="section-title">Full cycle <em>history</em></p>
   <div class="card" style="margin-bottom:0.9rem;">
@@ -569,7 +569,6 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
       <button class="btn btn-secondary btn-sm" onclick="openAddCycle()">+ Add cycle</button>
     </div>
   </div>
-  <!-- Add cycle form -->
   <div class="card" id="add-cycle-form" style="display:none;">
     <div class="card-label">Add / edit a cycle</div>
     <div class="form-row">
@@ -593,7 +592,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ JOURNAL ══ -->
+<!-- JOURNAL -->
 <div class="page" id="page-journal">
   <p class="section-title">Your <em>journal</em></p>
   <div class="card">
@@ -616,7 +615,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   <div id="journal-list"></div>
 </div>
 
-<!-- ══ INSIGHTS ══ -->
+<!-- INSIGHTS -->
 <div class="page" id="page-insights">
   <p class="section-title">Your <em>patterns</em></p>
   <div id="insights-alerts"></div>
@@ -648,7 +647,7 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   </div>
 </div>
 
-<!-- ══ SETTINGS ══ -->
+<!-- SETTINGS -->
 <div class="page" id="page-settings">
   <p class="section-title">Your <em>settings</em></p>
   <div class="card">
@@ -670,17 +669,18 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
   <div class="card">
     <div class="card-label">Cycle information</div>
     <div class="form-row">
-      <div class="form-group"><label>Avg cycle length (days)</label><input type="number" id="s-cycle" value="28" min="14" max="90"></div>
+      <div class="form-group"><label>Avg cycle length (days)</label><input type="number" id="s-cycle" value="28" min="14" max="90" oninput="updateCycleDayTiles()"></div>
       <div class="form-group"><label>Avg period length (days)</label><input type="number" id="s-period" value="5" min="1" max="15"></div>
       <div class="form-group"><label>Last period start date</label><input type="date" id="s-lastperiod"></div>
       <div class="form-group"><label>Trying to conceive?</label>
         <select id="s-ttc"><option value="no">No</option><option value="yes">Yes</option></select>
       </div>
-      <div class="form-group"><label>Fertile window starts on cycle day #</label><input type="number" id="s-fertileday" value="10" min="1" max="30" title="Which day of the cycle does the fertile window begin?"></div>
-      <div class="form-group"><label>Ovulation on cycle day #</label><input type="number" id="s-ovday" value="15" min="1" max="35" title="Which cycle day does ovulation occur?"></div>
+      <div class="form-group"><label>Fertile window starts on cycle day #</label><input type="number" id="s-fertile-day" min="1" max="40" placeholder="Auto" oninput="updateCycleDayTiles()"></div>
+      <div class="form-group"><label>Ovulation on cycle day #</label><input type="number" id="s-ov-day" min="1" max="40" placeholder="Auto" oninput="updateCycleDayTiles()"></div>
       <div class="form-group"><label>Water goal (glasses/day)</label><input type="number" id="s-watergoal" value="8" min="4" max="20"></div>
       <div class="form-group"><label>Step goal (daily)</label><input type="number" id="s-stepgoal" value="10000" min="1000" max="50000"></div>
     </div>
+    <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.1rem;">✦ Leave Fertile / Ovulation fields blank to auto-calculate from cycle length.</p>
   </div>
   <div class="card">
     <div class="card-label">Custom phase names</div>
@@ -721,26 +721,20 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
     <button class="btn btn-danger btn-sm" style="margin-top:0.7rem;width:auto;" onclick="clearData()">🗑 Clear all data</button>
   </div>
 </div>
-</div><!-- end main-app -->
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
-// ══════════════════════════════════════════
-// STATE
-// ══════════════════════════════════════════
-const DEF={pin:'',name:'',appName:'Luna',hue:340,cycleLength:28,periodLength:5,lastPeriodDate:'',waterGoal:8,stepGoal:10000,ttc:'no',
-  fertileStartDay:10,ovDay:15,
+const DEF={pin:'',name:'',appName:'Luna',hue:340,cycleLength:28,periodLength:5,lastPeriodDate:'',waterGoal:8,stepGoal:10000,ttc:'no',fertileStartDay:10,ovDay:15,
   phaseNames:{period:'',follicular:'',fertile:'',ovulation:'','luteal-early':'',luteal:''},
   medications:[],logs:{},journal:[],cycles:[],historicalCycles:[],imported:false};
 let S=JSON.parse(JSON.stringify(DEF));
 let waterCount=0;
 
-// ══ LOAD / SAVE ══
 function load(){
   try{const d=localStorage.getItem('luna_v3');if(d)S=Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(d));}catch(e){}
-  if(!S.lastPeriodDate){const d=new Date();d.setDate(d.getDate()-14);S.lastPeriodDate=d.toISOString().split('T')[0];}
-  applyTheme(S.hue);
-  applyAppName();
+  if(!S.lastPeriodDate){const d=new Date();d.setDate(d.getDate()-14);S.lastPeriodDate=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  applyTheme(S.hue);applyAppName();
 }
 function persist(){localStorage.setItem('luna_v3',JSON.stringify(S));}
 function applyTheme(h){document.documentElement.style.setProperty('--hue',h);S.hue=h;}
@@ -752,7 +746,38 @@ function applyAppName(){
   document.title=n;
 }
 
-// ══ PIN ══
+// AUTO-SAVE (persists every interaction without needing "Save" button)
+function autoSave(){
+  const date=document.getElementById('log-date')?document.getElementById('log-date').value:'';
+  if(!date)return;
+  const existing=S.logs[date]||{};
+  const fb=document.querySelector('.flow-btn:not([data-q]).selected');
+  const mb=document.querySelector('.mood-chip[data-mood].selected');
+  const qb=document.querySelector('.flow-btn[data-q].selected');
+  const syms=Array.from(document.querySelectorAll('.chip.selected')).map(c=>c.dataset.s);
+  S.logs[date]=Object.assign(existing,{
+    flow:fb?fb.dataset.flow:(existing.flow||'none'),
+    mood:mb?mb.dataset.mood:(existing.mood||null),
+    symptoms:syms.length?syms:(existing.symptoms||[]),
+    pain:parseInt(document.getElementById('pain-slider').value||0),
+    temp:document.getElementById('log-temp').value?parseFloat(document.getElementById('log-temp').value):(existing.temp||null),
+    tempTime:document.getElementById('log-temp-time').value||existing.tempTime||null,
+    sleep:parseFloat(document.getElementById('sleep-slider').value)||existing.sleep||null,
+    sleepQuality:qb?qb.dataset.q:(existing.sleepQuality||null),
+    water:waterCount,
+    weight:document.getElementById('log-weight').value?parseFloat(document.getElementById('log-weight').value):(existing.weight||null),
+    steps:document.getElementById('log-steps').value?parseInt(document.getElementById('log-steps').value):(existing.steps||null),
+    cm:document.getElementById('log-cm').value||existing.cm||null,
+    sex:document.getElementById('log-sex').value||existing.sex||null,
+    opk:document.getElementById('log-opk').value||existing.opk||null,
+    cervix:document.getElementById('log-cervix').value||existing.cervix||null,
+    note:document.getElementById('log-note-quick').value.trim()||existing.note||null,
+    ts:Date.now()
+  });
+  persist();
+}
+
+// PIN
 let pinBuf='';
 function initPin(){
   if(!S.pin){document.getElementById('pin-screen').classList.add('hidden');refreshAll();return;}
@@ -760,7 +785,7 @@ function initPin(){
 }
 function pinKey(k){
   if(k==='skip'){document.getElementById('pin-screen').classList.add('hidden');refreshAll();return;}
-  if(k==='back'){pinBuf=pinBuf.slice(0,-1);}
+  if(k==='back')pinBuf=pinBuf.slice(0,-1);
   else if(pinBuf.length<4)pinBuf+=k;
   renderPinDots();
   if(pinBuf.length===4){
@@ -773,7 +798,7 @@ function pinKey(k){
 function renderPinDots(){document.querySelectorAll('.pin-dot').forEach((d,i)=>d.classList.toggle('filled',i<pinBuf.length));}
 function lockApp(){document.getElementById('pin-screen').classList.remove('hidden');pinBuf='';renderPinDots();document.getElementById('pin-error').textContent='';}
 
-// ══ PARTNER ══
+// PARTNER
 function showPartner(){
   const day=getCycleDay(),phase=getPhase(day),info=PHASE_INFO[phase];
   const pct=Math.round(day/S.cycleLength*100);
@@ -781,13 +806,13 @@ function showPartner(){
   document.getElementById('p-day').textContent=day;
   document.getElementById('p-total').textContent=S.cycleLength;
   document.getElementById('p-phase').textContent=phaseName(phase);
-  document.getElementById('p-next').textContent='Period in ~'+(S.cycleLength-day)+' days';
+  document.getElementById('p-next').textContent='Period in ~'+(S.cycleLength-day+1)+' days';
   document.getElementById('p-tip').innerHTML='<strong>She might be feeling:</strong> '+info.desc+'<br><br><strong>How to support her:</strong> '+info.partnerTip;
   document.getElementById('partner-screen').classList.add('active');
 }
 function closePartner(e){if(e.target.id==='partner-screen')document.getElementById('partner-screen').classList.remove('active');}
 
-// ══ PAGES ══
+// PAGES
 const PAGES=['home','log','calendar','history','journal','insights','settings'];
 function showPage(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -805,37 +830,13 @@ function showPage(name){
 }
 function refreshAll(){updateHome();}
 
-// ══ CYCLE MATH ══
-// ── DATE HELPERS (Aruba = UTC-4, always) ──
-// We never use toISOString() for "today" because that uses UTC and can be yesterday in UTC-4.
-// Instead we read the local clock components directly.
-function today(){
-  const d=new Date();
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-}
-// Parse a YYYY-MM-DD string as a pure local date (no timezone shift).
-function parseLocalDate(ds){
-  if(!ds)return null;
-  const [y,m,d]=ds.split('-').map(Number);
-  return new Date(y,m-1,d);
-}
-// Difference in whole days between two YYYY-MM-DD strings (b - a).
-function daysBetween(aStr,bStr){
-  return Math.round((parseLocalDate(bStr)-parseLocalDate(aStr))/86400000);
-}
-
-// ── CYCLE MATH ──
-// Her fertile window starts every 22 days from last known fertile start.
-// Her ovulation occurs every 28 days from last known ovulation.
-// Last period started: Apr 27, 2026
-// Last fertile window started: May 6, 2026  (day 10 of that cycle)
-// Last ovulation: May 11, 2026              (day 15 of that cycle)
-// So within any cycle: fertile starts on day 10, ovulation on day 15,
-// fertile window spans days 10–14 (5 days), luteal phase starts day 16.
-// We derive fertileStartDay and ovDay relative to period start.
+// CYCLE MATH
+// Use local clock — never toISOString() which gives UTC and can be yesterday in Aruba (UTC-4)
+function today(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function parseLocalDate(ds){if(!ds)return null;const[y,m,d]=ds.split('-').map(Number);return new Date(y,m-1,d);}
+function daysBetween(aStr,bStr){return Math.round((parseLocalDate(bStr)-parseLocalDate(aStr))/86400000);}
 function getFertileStartDay(){return S.fertileStartDay||10;}
 function getOvDay(){return S.ovDay||15;}
-
 function getCycleDay(){
   if(!S.lastPeriodDate)return 1;
   const diff=daysBetween(S.lastPeriodDate,today());
@@ -868,12 +869,12 @@ const PHASE_INFO={
     care:['💊 Magnesium glycinate is genuinely helpful for PMS','☕ Reduce caffeine and alcohol where possible','🚶 Light walks over intense exercise','🫐 Vitamin B6: bananas, chickpeas, salmon','🧘 Journalling or meditation helps regulate emotions','🍫 Dark chocolate (70%+) — craving it is your body talking!']}
 };
 
-// ══ HOME ══
+// HOME
 function updateHome(){
   const n=S.name||'beautiful';
   document.getElementById('home-name').textContent=n;
   const day=getCycleDay(),phase=getPhase(day),info=PHASE_INFO[phase];
-  const dLeft=S.cycleLength-day;
+  const dLeft=S.cycleLength-day+1;
   document.getElementById('home-day-title').textContent='Day '+day+' of your cycle';
   document.getElementById('home-desc').textContent=info.desc;
   document.getElementById('ring-num').textContent=day;
@@ -894,26 +895,20 @@ function updateHome(){
   document.getElementById('home-today-log').textContent=parts.length?parts.join(' · '):(lg.flow?'Logged ✓':'Nothing logged yet today.');
   const fsd=getFertileStartDay(),ovDay=getOvDay(),dToOv=ovDay-day,dToFertile=fsd-day;
   document.getElementById('home-upcoming').innerHTML=
-    `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--rose-deep);flex-shrink:0"></span><span>Period in ~${dLeft} day${dLeft===1?'':'s'}</span></div>`+
-    `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint);flex-shrink:0"></span><span>${dToFertile>0?'Fertile window in ~'+dToFertile+' day'+(dToFertile===1?'':'s'):dToFertile<=0&&dToOv>0?'Fertile window now 🌿':'Fertile window passed'}</span></div>`+
-    `<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint-deep);flex-shrink:0"></span><span>${dToOv>0?'Ovulation in ~'+dToOv+' day'+(dToOv===1?'':'s'):dToOv===0?'Ovulation today 🌿':'Ovulation was '+Math.abs(dToOv)+' day'+(Math.abs(dToOv)===1?'':'s')+' ago'}</span></div>`;
+    '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--rose-deep);flex-shrink:0"></span><span>Period in ~'+dLeft+' day'+(dLeft===1?'':'s')+'</span></div>'+
+    '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint);flex-shrink:0"></span><span>'+(dToFertile>0?'Fertile window in ~'+dToFertile+' day'+(dToFertile===1?'':'s'):dToFertile<=0&&dToOv>=0?'Fertile window now 🌿':'Fertile window passed')+'</span></div>'+
+    '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint-deep);flex-shrink:0"></span><span>'+(dToOv>0?'Ovulation in ~'+dToOv+' day'+(dToOv===1?'':'s'):dToOv===0?'Ovulation today 🌿':'Ovulation was '+Math.abs(dToOv)+' day'+(Math.abs(dToOv)===1?'':'s')+' ago')+'</span></div>';
   document.getElementById('care-title').textContent='✦ Self-care for '+phaseName(phase);
-  document.getElementById('care-list').innerHTML=info.care.map(c=>`<div class="care-item">${c}</div>`).join('');
-  // late period
+  document.getElementById('care-list').innerHTML=info.care.map(c=>'<div class="care-item">'+c+'</div>').join('');
   if(day>S.cycleLength+3){
     document.getElementById('late-alert').style.display='block';
     document.getElementById('late-alert-body').textContent='Your period appears to be '+(day-S.cycleLength)+' days late. This is common — stress, travel and hormonal shifts can all delay it. If you\'re concerned, consider a pregnancy test or a chat with your doctor 💗';
   }else document.getElementById('late-alert').style.display='none';
-  // pill check-in
   if(S.medications&&S.medications.length){
     document.getElementById('pill-home-card').style.display='block';
     const taken=(lg.medsTaken||[]);
-    document.getElementById('pill-home-list').innerHTML=S.medications.map((m,i)=>`
-      <div class="pill-log-item">
-        <div><div class="pill-name">${m.name}</div><div class="pill-time">${m.time||''}</div></div>
-        <div style="flex:1"></div>
-        <button class="pill-check ${taken.includes(i)?'taken':''}" onclick="togMed(${i})">${taken.includes(i)?'✓':'○'}</button>
-      </div>`).join('');
+    document.getElementById('pill-home-list').innerHTML=S.medications.map((m,i)=>
+      '<div class="pill-log-item"><div><div class="pill-name">'+m.name+'</div><div class="pill-time">'+(m.time||'')+'</div></div><div style="flex:1"></div><button class="pill-check '+(taken.includes(i)?'taken':'')+'" onclick="togMed('+i+')">'+(taken.includes(i)?'✓':'○')+'</button></div>').join('');
   }else document.getElementById('pill-home-card').style.display='none';
 }
 function togMed(i){
@@ -923,7 +918,7 @@ function togMed(i){
   persist();updateHome();
 }
 
-// ══ LOG ══
+// LOG
 const activeSecs=new Set();
 function initLog(){
   document.getElementById('log-date').value=today();
@@ -932,20 +927,27 @@ function initLog(){
   document.getElementById('steps-goal-lbl').textContent=(S.stepGoal||10000).toLocaleString();
   document.getElementById('water-goal-lbl').textContent=S.waterGoal||8;
   document.getElementById('water-goal-show').textContent=S.waterGoal||8;
-  // pre-fill
   const lg=S.logs[today()]||{};
-  if(lg.flow){document.querySelectorAll('.flow-btn').forEach(b=>b.classList.remove('selected'));const fb=document.querySelector(`.flow-btn[data-flow="${lg.flow}"]`);if(fb)fb.classList.add('selected');}
+  if(lg.flow){document.querySelectorAll('.flow-btn:not([data-q])').forEach(b=>b.classList.remove('selected'));const fb=document.querySelector('.flow-btn[data-flow="'+lg.flow+'"]');if(fb)fb.classList.add('selected');}
+  if(lg.mood){document.querySelectorAll('.mood-chip[data-mood]').forEach(b=>b.classList.remove('selected'));const mb=document.querySelector('.mood-chip[data-mood="'+lg.mood+'"]');if(mb)mb.classList.add('selected');}
+  if(lg.symptoms&&lg.symptoms.length){document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('selected',lg.symptoms.includes(c.dataset.s)));}
   if(lg.pain!=null){document.getElementById('pain-slider').value=lg.pain;document.getElementById('pain-val').textContent=lg.pain;}
   if(lg.temp)document.getElementById('log-temp').value=lg.temp;
   if(lg.sleep){document.getElementById('sleep-slider').value=lg.sleep;document.getElementById('sleep-val').textContent=parseFloat(lg.sleep).toFixed(1);}
+  if(lg.sleepQuality){document.querySelectorAll('.flow-btn[data-q]').forEach(b=>b.classList.toggle('selected',b.dataset.q===lg.sleepQuality));}
   if(lg.water){waterCount=lg.water;renderGlasses();}
   if(lg.weight)document.getElementById('log-weight').value=lg.weight;
   if(lg.steps)document.getElementById('log-steps').value=lg.steps;
+  if(lg.note)document.getElementById('log-note-quick').value=lg.note;
+  if(lg.cm)document.getElementById('log-cm').value=lg.cm;
+  if(lg.sex)document.getElementById('log-sex').value=lg.sex;
+  if(lg.opk)document.getElementById('log-opk').value=lg.opk;
+  if(lg.cervix)document.getElementById('log-cervix').value=lg.cervix;
 }
 function toggleSec(id){
   const map={sym:'sec-sym',moo:'sec-moo',tem:'sec-tem',ttc:'sec-ttc',ste:'sec-ste',sle:'sec-sle',wat:'sec-wat'};
   const el=document.getElementById(map[id]);
-  const btn=document.querySelector(`.qm-btn[onclick="toggleSec('${id}')"]`);
+  const btn=document.querySelector('.qm-btn[onclick="toggleSec(\''+id+'\')"]');
   if(activeSecs.has(id)){activeSecs.delete(id);el.classList.remove('visible');btn.classList.remove('active');}
   else{activeSecs.add(id);el.classList.add('visible');btn.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
@@ -953,48 +955,29 @@ function renderGlasses(){
   const goal=S.waterGoal||8;
   document.getElementById('water-goal-show').textContent=goal;
   document.getElementById('water-count').textContent=waterCount;
-  let h='';for(let i=0;i<goal;i++)h+=`<div onclick="togGlass(${i})" style="font-size:1.3rem;cursor:pointer;opacity:${i<waterCount?1:0.22};transition:opacity 0.13s">💧</div>`;
+  let h='';for(let i=0;i<goal;i++)h+='<div onclick="togGlass('+i+')" style="font-size:1.3rem;cursor:pointer;opacity:'+(i<waterCount?1:0.22)+';transition:opacity 0.13s">💧</div>';
   document.getElementById('water-glasses').innerHTML=h;
 }
-function togGlass(i){waterCount=i<waterCount?i:i+1;renderGlasses();}
-function selFlow(b){document.querySelectorAll('.flow-btn:not([data-q])').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');}
-function selMood(b){document.querySelectorAll('.mood-chip[data-mood]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');}
-function selQ(b){document.querySelectorAll('.flow-btn[data-q]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');}
-function togChip(c){c.classList.toggle('selected');}
+function togGlass(i){waterCount=i<waterCount?i:i+1;renderGlasses();autoSave();}
+function selFlow(b){document.querySelectorAll('.flow-btn:not([data-q])').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');autoSave();}
+function selMood(b){document.querySelectorAll('.mood-chip[data-mood]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');autoSave();}
+function selQ(b){document.querySelectorAll('.flow-btn[data-q]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');autoSave();}
+function togChip(c){c.classList.toggle('selected');autoSave();}
 function buildMedLog(){
   if(!S.medications||!S.medications.length){document.getElementById('med-log-card').style.display='none';return;}
   document.getElementById('med-log-card').style.display='block';
   const taken=(S.logs[today()]||{}).medsTaken||[];
-  document.getElementById('med-log-list').innerHTML=S.medications.map((m,i)=>`
-    <div class="pill-log-item"><div class="pill-name">${m.name}</div><div class="pill-time">${m.time||''}</div>
-    <button class="pill-check ${taken.includes(i)?'taken':''}" onclick="togMed(${i})">${taken.includes(i)?'✓':'○'}</button></div>`).join('');
+  document.getElementById('med-log-list').innerHTML=S.medications.map((m,i)=>
+    '<div class="pill-log-item"><div class="pill-name">'+m.name+'</div><div class="pill-time">'+(m.time||'')+'</div><button class="pill-check '+(taken.includes(i)?'taken':'')+'" onclick="togMed('+i+')">'+(taken.includes(i)?'✓':'○')+'</button></div>').join('');
 }
 function saveLog(){
   const date=document.getElementById('log-date').value;
   if(!date){showToast('Pick a date first!');return;}
-  const fb=document.querySelector('.flow-btn:not([data-q]).selected');
-  const mb=document.querySelector('.mood-chip.selected');
-  const qb=document.querySelector('.flow-btn[data-q].selected');
-  const syms=Array.from(document.querySelectorAll('.chip.selected')).map(c=>c.dataset.s);
-  const existing=S.logs[date]||{};
-  S.logs[date]=Object.assign(existing,{
-    flow:fb?fb.dataset.flow:'none',mood:mb?mb.dataset.mood:null,symptoms:syms,
-    pain:parseInt(document.getElementById('pain-slider').value),
-    temp:document.getElementById('log-temp').value?parseFloat(document.getElementById('log-temp').value):null,
-    tempTime:document.getElementById('log-temp-time').value||null,
-    sleep:parseFloat(document.getElementById('sleep-slider').value)||null,
-    sleepQuality:qb?qb.dataset.q:null,water:waterCount,
-    weight:document.getElementById('log-weight').value?parseFloat(document.getElementById('log-weight').value):null,
-    steps:document.getElementById('log-steps').value?parseInt(document.getElementById('log-steps').value):null,
-    cm:document.getElementById('log-cm').value||null,sex:document.getElementById('log-sex').value||null,
-    opk:document.getElementById('log-opk').value||null,cervix:document.getElementById('log-cervix').value||null,
-    note:document.getElementById('log-note-quick').value.trim()||null,ts:Date.now()
-  });
-  persist();
+  autoSave();
   showToast('Log saved! 🌸');
 }
 
-// ══ CALENDAR ══
+// CALENDAR
 const CAL={month:new Date().getMonth(),year:new Date().getFullYear()};
 const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const DS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -1005,25 +988,27 @@ function changeMonth(d){
   renderCalendar();
 }
 function getDayClass(ds){
-  if(!S.lastPeriodDate)return '';
   const lg=S.logs[ds];
   if(lg&&lg.flow&&lg.flow!=='none')return lg.flow==='heavy'?'period-heavy':'period';
   const pl=S.periodLength,cl=S.cycleLength;
-  const fsd=getFertileStartDay(); // day within cycle when fertile window starts
-  const ov=getOvDay();            // day within cycle when ovulation occurs
-  // Check historical period starts — mark actual logged period days
-  const allStarts=getAllPeriodStarts();
-  for(const startStr of allStarts){
-    const diff=daysBetween(startStr,ds);
-    if(diff>=0&&diff<pl)return 'period';
+  const fsd=getFertileStartDay();
+  const ov=getOvDay();
+  // Historical period days
+  const hc=S.historicalCycles||[];
+  for(const c of hc){
+    if(!c.start)continue;
+    const dur=c.duration||pl;
+    const diff=daysBetween(c.start,ds);
+    if(diff>=0&&diff<dur)return 'period';
   }
-  // Predicted: use lastPeriodDate as anchor, project forward/backward by cycleLength
+  if(!S.lastPeriodDate)return '';
   const diff=daysBetween(S.lastPeriodDate,ds);
-  const cd=((diff%cl)+cl)%cl; // day within cycle (0-indexed)
-  const dayNum=cd+1;           // 1-indexed cycle day
-  if(cd<pl)return 'predicted';
-  if(dayNum>=fsd&&dayNum<ov)return 'fertile';
-  if(dayNum===ov)return 'ovulation';
+  const cd=((diff%cl)+cl)%cl;  // 0-indexed day within cycle
+  const dayNum=cd+1;            // 1-indexed cycle day
+  if(cd<pl)return diff>=0?'predicted':'';
+  if(dayNum>=fsd&&dayNum<ov)return 'fertile';   // May 6–10
+  if(dayNum===ov)return 'ovulation';             // May 11
+  if(dayNum===ov+1)return 'fertile';             // May 12 (1 day after ovulation)
   return '';
 }
 function getAllPeriodStarts(){
@@ -1041,7 +1026,7 @@ function renderCalendar(){
   const tod=today();
   for(let i=0;i<first;i++){const e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e);}
   for(let d=1;d<=dim;d++){
-    const ds=`${CAL.year}-${String(CAL.month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const ds=CAL.year+'-'+String(CAL.month+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
     const e=document.createElement('div');
     let cls='cal-day '+getDayClass(ds);
     if(ds===tod)cls+=' today';
@@ -1053,29 +1038,27 @@ function renderCalendar(){
 }
 function showCalDay(ds){
   const det=document.getElementById('cal-detail');det.style.display='block';
-  // Use parseLocalDate so Aruba timezone doesn't shift the day back
   const dt=parseLocalDate(ds);
   document.getElementById('cal-detail-date').textContent=dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   const lg=S.logs[ds];
-  // Also check historical cycle
   const hc=(S.historicalCycles||[]).find(c=>c.start===ds||c.end===ds);
   let html='';
   if(lg){
-    if(lg.flow&&lg.flow!=='none')html+=`<div>🩸 Flow: <b>${lg.flow}</b></div>`;
-    if(lg.mood)html+=`<div>💭 Mood: <b>${lg.mood}</b></div>`;
-    if(lg.pain)html+=`<div>🌀 Pain: <b>${lg.pain}/10</b></div>`;
-    if(lg.temp)html+=`<div>🌡️ BBT: <b>${lg.temp}°C</b></div>`;
-    if(lg.sleep)html+=`<div>🌙 Sleep: <b>${lg.sleep} hrs</b></div>`;
-    if(lg.water)html+=`<div>💧 Water: <b>${lg.water} glasses</b></div>`;
-    if(lg.steps)html+=`<div>👟 Steps: <b>${lg.steps.toLocaleString()}</b></div>`;
-    if(lg.weight)html+=`<div>⚖️ Weight: <b>${lg.weight} kg</b></div>`;
-    if(lg.symptoms&&lg.symptoms.length)html+=`<div>🌸 Symptoms: ${lg.symptoms.join(', ')}</div>`;
-    if(lg.note)html+=`<div style="margin-top:0.35rem;font-style:italic;color:var(--text-muted)">"${lg.note}"</div>`;
+    if(lg.flow&&lg.flow!=='none')html+='<div>🩸 Flow: <b>'+lg.flow+'</b></div>';
+    if(lg.mood)html+='<div>💭 Mood: <b>'+lg.mood+'</b></div>';
+    if(lg.pain)html+='<div>🌀 Pain: <b>'+lg.pain+'/10</b></div>';
+    if(lg.temp)html+='<div>🌡️ BBT: <b>'+lg.temp+'°C</b></div>';
+    if(lg.sleep)html+='<div>🌙 Sleep: <b>'+lg.sleep+' hrs</b></div>';
+    if(lg.water)html+='<div>💧 Water: <b>'+lg.water+' glasses</b></div>';
+    if(lg.steps)html+='<div>👟 Steps: <b>'+lg.steps.toLocaleString()+'</b></div>';
+    if(lg.weight)html+='<div>⚖️ Weight: <b>'+lg.weight+' kg</b></div>';
+    if(lg.symptoms&&lg.symptoms.length)html+='<div>🌸 Symptoms: '+lg.symptoms.join(', ')+'</div>';
+    if(lg.note)html+='<div style="margin-top:0.35rem;font-style:italic;color:var(--text-muted)">"'+lg.note+'"</div>';
   }
   if(hc){
-    if(hc.start===ds)html+=`<div style="margin-top:0.35rem;">🩸 Period started — cycle #${(S.historicalCycles||[]).indexOf(hc)+1}</div>`;
-    if(hc.end===ds)html+=`<div>🩸 Period ended (duration: ${hc.duration||'?'} days)</div>`;
-    if(hc.note)html+=`<div style="font-style:italic;color:var(--text-muted)">"${hc.note}"</div>`;
+    if(hc.start===ds)html+='<div style="margin-top:0.35rem;">🩸 Period started — cycle #'+((S.historicalCycles||[]).indexOf(hc)+1)+'</div>';
+    if(hc.end===ds)html+='<div>🩸 Period ended (duration: '+(hc.duration||'?')+' days)</div>';
+    if(hc.note)html+='<div style="font-style:italic;color:var(--text-muted)">"'+hc.note+'"</div>';
   }
   if(!html){
     const cls=getDayClass(ds);
@@ -1087,34 +1070,26 @@ function showCalDay(ds){
   document.getElementById('cal-detail-body').innerHTML=html;
 }
 
-// ══ HISTORY ══
+// HISTORY
 function renderHistory(){
   const cycles=((S.historicalCycles||[]).slice()).reverse();
   document.getElementById('history-summary').textContent=
     cycles.length+' cycles imported · from '+(cycles.length?cycles[cycles.length-1].start:'n/a')+' to '+(cycles.length?cycles[0].start:'n/a');
   const tbody=document.getElementById('history-tbody');
   if(!cycles.length){tbody.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:2rem;">No cycles yet. Click "+ Add cycle" to add one.</td></tr>';return;}
-  tbody.innerHTML=cycles.map((c,i)=>{
+  tbody.innerHTML=cycles.map((c)=>{
     const len=c.cycleLength||'—';
-    let badge='',badgeCls='badge-normal';
+    let badgeCls='badge-normal';
     if(typeof len==='number'){
-      if(len<21){badge=' (very short)';badgeCls='badge-short';}
-      else if(len<=35){badge='';badgeCls='badge-normal';}
-      else if(len<=45){badge=' (longer)';badgeCls='badge-long';}
-      else{badge=' (irregular)';badgeCls='badge-vlong';}
+      if(len<21)badgeCls='badge-short';
+      else if(len<=35)badgeCls='badge-normal';
+      else if(len<=45)badgeCls='badge-long';
+      else badgeCls='badge-vlong';
     }
-    const dur=c.duration?c.duration+' days':'—';
-    return `<tr>
-      <td>${fmtDate(c.start)}</td>
-      <td>${c.end?fmtDate(c.end):'—'}</td>
-      <td>${dur}</td>
-      <td>${typeof len==='number'?`<span class="cycle-badge ${badgeCls}">${len} days${badge}</span>`:len}</td>
-      <td style="color:var(--text-muted);font-size:0.78rem;">${c.note||''}</td>
-      <td><button onclick="deleteCycle(${S.historicalCycles.indexOf(c)})" style="background:none;border:none;color:var(--text-light);cursor:pointer;font-size:0.8rem;">✕</button></td>
-    </tr>`;
+    return '<tr><td>'+fmtDate(c.start)+'</td><td>'+(c.end?fmtDate(c.end):'—')+'</td><td>'+(c.duration?c.duration+' days':'—')+'</td><td>'+(typeof len==='number'?'<span class="cycle-badge '+badgeCls+'">'+len+' days</span>':len)+'</td><td style="color:var(--text-muted);font-size:0.78rem;">'+(c.note||'')+'</td><td><button onclick="deleteCycle('+((S.historicalCycles||[]).indexOf(c))+')" style="background:none;border:none;color:var(--text-light);cursor:pointer;font-size:0.8rem;">✕</button></td></tr>';
   }).join('');
 }
-function fmtDate(ds){if(!ds)return'—';try{return parseLocalDate(ds).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch{return ds;}}
+function fmtDate(ds){if(!ds)return'—';try{return parseLocalDate(ds).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch(e){return ds;}}
 function openAddCycle(){document.getElementById('add-cycle-form').style.display='block';}
 function closeAddCycle(){document.getElementById('add-cycle-form').style.display='none';}
 function saveNewCycle(){
@@ -1123,20 +1098,19 @@ function saveNewCycle(){
   const end=document.getElementById('new-cycle-end').value||null;
   const len=document.getElementById('new-cycle-len').value?parseInt(document.getElementById('new-cycle-len').value):null;
   let dur=null;
-  if(start&&end){dur=Math.round((new Date(end)-new Date(start))/86400000)+1;}
+  if(start&&end)dur=Math.round((new Date(end)-new Date(start))/86400000)+1;
   const note=document.getElementById('new-cycle-note').value.trim()||null;
   if(!S.historicalCycles)S.historicalCycles=[];
   S.historicalCycles.push({start,end,duration:dur,cycleLength:len,note});
   S.historicalCycles.sort((a,b)=>a.start<b.start?-1:1);
-  persist();closeAddCycle();renderHistory();
-  showToast('Cycle added!');
+  persist();closeAddCycle();renderHistory();showToast('Cycle added!');
 }
 function deleteCycle(i){
   if(!confirm('Delete this cycle entry?'))return;
   S.historicalCycles.splice(i,1);persist();renderHistory();
 }
 
-// ══ JOURNAL ══
+// JOURNAL
 const JTAG_C={general:['#E8F4FD','#1A6A9A'],symptoms:['#FDE8EF','#C03060'],mood:['#EDE8FD','#5A4AAA'],health:['#E8FDF0','#1A7A50'],questions:['#FFF8E8','#8A6000'],ttc:['#E8FDE8','#1A7A30']};
 function togJTag(b){b.classList.toggle('selected');}
 function saveJEntry(){
@@ -1155,17 +1129,14 @@ function renderJournal(){
   const q=(document.getElementById('journal-search').value||'').toLowerCase();
   const entries=(S.journal||[]).filter(e=>!q||e.text.toLowerCase().includes(q)||e.date.includes(q));
   if(!entries.length){document.getElementById('journal-list').innerHTML='<div class="card" style="color:var(--text-muted);font-size:0.86rem;">'+(q?'No entries match your search.':'Your journal is empty. Start writing! 🌸')+'</div>';return;}
-  document.getElementById('journal-list').innerHTML=entries.map((e,i)=>`
-    <div class="journal-entry">
-      <div class="journal-date">${fmtDate(e.date)}</div>
-      <div class="journal-text">${e.text.replace(/\n/g,'<br>')}</div>
-      ${(e.tags&&e.tags.length)?`<div class="journal-tags">${e.tags.map(t=>{const[bg,col]=JTAG_C[t]||['#eee','#666'];return`<span class="jtag" style="background:${bg};color:${col}">${t}</span>`;}).join('')}</div>`:''}
-      <button onclick="delJEntry(${(S.journal||[]).indexOf(e)})" style="margin-top:0.35rem;background:none;border:none;color:var(--text-light);font-size:0.7rem;cursor:pointer;">Delete</button>
-    </div>`).join('');
+  document.getElementById('journal-list').innerHTML=entries.map((e)=>
+    '<div class="journal-entry"><div class="journal-date">'+fmtDate(e.date)+'</div><div class="journal-text">'+e.text.replace(/\n/g,'<br>')+'</div>'+
+    ((e.tags&&e.tags.length)?'<div class="journal-tags">'+e.tags.map(t=>{const[bg,col]=JTAG_C[t]||['#eee','#666'];return'<span class="jtag" style="background:'+bg+';color:'+col+'">'+t+'</span>';}).join('')+'</div>':'')+
+    '<button onclick="delJEntry('+((S.journal||[]).indexOf(e))+')" style="margin-top:0.35rem;background:none;border:none;color:var(--text-light);font-size:0.7rem;cursor:pointer;">Delete</button></div>').join('');
 }
 function delJEntry(i){(S.journal||[]).splice(i,1);persist();renderJournal();}
 
-// ══ INSIGHTS ══
+// INSIGHTS
 function renderInsights(){
   const logs=Object.entries(S.logs||{});
   const hc=S.historicalCycles||[];
@@ -1179,58 +1150,54 @@ function renderInsights(){
   document.getElementById('i-long').innerHTML=longL+(longL!=='—'?' <span>days</span>':'');
   document.getElementById('i-count').innerHTML=hc.length+' <span>total</span>';
   document.getElementById('i-days').innerHTML=logs.length+' <span>days</span>';
-
-  // Irregularity alerts
   let alertHTML='';
   if(allLens.length>=3){
     const recent=allLens.slice(-3);
-    if(recent.slice(-2).every(l=>l<avg-4))alertHTML+=`<div class="ins-alert"><div class="ins-alert-title">📉 Shorter cycles recently</div><div class="ins-alert-body">Your last 2 cycles were shorter than your average of ${avg} days. Small variations are normal, but if this continues it may be worth mentioning to your doctor.</div></div>`;
-    if(recent.slice(-2).every(l=>l>avg+4))alertHTML+=`<div class="ins-alert"><div class="ins-alert-title">📈 Longer cycles recently</div><div class="ins-alert-body">Your last 2 cycles were longer than average. Stress, illness and other factors can cause this.</div></div>`;
+    if(recent.slice(-2).every(l=>l<avg-4))alertHTML+='<div class="ins-alert"><div class="ins-alert-title">📉 Shorter cycles recently</div><div class="ins-alert-body">Your last 2 cycles were shorter than your average of '+avg+' days. Small variations are normal, but if this continues it may be worth mentioning to your doctor.</div></div>';
+    if(recent.slice(-2).every(l=>l>avg+4))alertHTML+='<div class="ins-alert"><div class="ins-alert-title">📈 Longer cycles recently</div><div class="ins-alert-body">Your last 2 cycles were longer than average. Stress, illness and other factors can cause this.</div></div>';
   }
-  if(getCycleDay()>S.cycleLength+3)alertHTML+=`<div class="ins-alert"><div class="ins-alert-title">💗 Period may be late</div><div class="ins-alert-body">Your period appears to be ${getCycleDay()-S.cycleLength} days late. Stress, travel and hormonal shifts can all delay it. 💗</div></div>`;
+  if(getCycleDay()>S.cycleLength+3)alertHTML+='<div class="ins-alert"><div class="ins-alert-title">💗 Period may be late</div><div class="ins-alert-body">Your period appears to be '+(getCycleDay()-S.cycleLength)+' days late. Stress, travel and hormonal shifts can all delay it. 💗</div></div>';
   document.getElementById('insights-alerts').innerHTML=alertHTML;
-
-  // Cycle length chart
   const svg=document.getElementById('cycle-chart-svg');
   const recent50=hc.filter(c=>c.cycleLength).slice(-50);
   if(recent50.length>=2){
     const lens=recent50.map(c=>c.cycleLength);
     const mn=Math.min(...lens)-3,mx=Math.max(...lens)+3;
     const W=500,H=120,pad=20;
-    const x=i=>pad+i/(lens.length-1)*(W-pad*2);
-    const y=v=>H-pad-((v-mn)/(mx-mn))*(H-pad*2);
-    const avgY=y(avg);
-    let path=lens.map((v,i)=>(i===0?'M':'L')+x(i).toFixed(1)+','+y(v).toFixed(1)).join(' ');
-    const dots=lens.map((v,i)=>`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="3.5" fill="hsl(${S.hue},65%,52%)"/>`).join('');
-    svg.innerHTML=`<line x1="${pad}" y1="${avgY.toFixed(1)}" x2="${W-pad}" y2="${avgY.toFixed(1)}" stroke="hsl(${S.hue},60%,75%)" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <path d="${path}" fill="none" stroke="hsl(${S.hue},65%,52%)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${dots}
-      <text x="${pad}" y="${avgY-5}" font-size="9" fill="hsl(${S.hue},40%,55%)">avg ${avg}d</text>`;
-  }else{svg.innerHTML=`<text x="250" y="60" text-anchor="middle" font-size="12" fill="hsl(${S.hue},30%,65%)">Import cycle history to see your trend</text>`;}
-
-  // BBT
+    const xf=i=>pad+i/(lens.length-1)*(W-pad*2);
+    const yf=v=>H-pad-((v-mn)/(mx-mn))*(H-pad*2);
+    const avgY=yf(avg);
+    const path=lens.map((v,i)=>(i===0?'M':'L')+xf(i).toFixed(1)+','+yf(v).toFixed(1)).join(' ');
+    const dots=lens.map((v,i)=>'<circle cx="'+xf(i).toFixed(1)+'" cy="'+yf(v).toFixed(1)+'" r="3.5" fill="hsl('+S.hue+',65%,52%)"/>').join('');
+    svg.innerHTML='<line x1="'+pad+'" y1="'+avgY.toFixed(1)+'" x2="'+(W-pad)+'" y2="'+avgY.toFixed(1)+'" stroke="hsl('+S.hue+',60%,75%)" stroke-width="1.5" stroke-dasharray="5,4"/><path d="'+path+'" fill="none" stroke="hsl('+S.hue+',65%,52%)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'+dots+'<text x="'+pad+'" y="'+(avgY-5).toFixed(1)+'" font-size="9" fill="hsl('+S.hue+',40%,55%)">avg '+avg+'d</text>';
+  }else{svg.innerHTML='<text x="250" y="60" text-anchor="middle" font-size="12" fill="hsl('+S.hue+',30%,65%)">Import cycle history to see your trend</text>';}
   const bbtSVG=document.getElementById('bbt-svg');
   const bbtData=logs.filter(([,l])=>l.temp).sort((a,b)=>a[0]<b[0]?-1:1).slice(-30);
   if(bbtData.length>=2){
     const temps=bbtData.map(([,l])=>l.temp);
-    const mn=Math.min(...temps)-0.15,mx=Math.max(...temps)+0.15;
-    const W=400,H=110;
-    const pts=temps.map((t,i)=>`${Math.round(i/(temps.length-1)*(W-20)+10)},${Math.round(H-((t-mn)/(mx-mn))*(H-20)-10)}`).join(' ');
-    bbtSVG.innerHTML=`<polyline points="${pts}" fill="none" stroke="hsl(${S.hue},65%,52%)" stroke-width="2" stroke-linejoin="round"/>`+
-      temps.map((t,i)=>{const cx=Math.round(i/(temps.length-1)*(W-20)+10),cy=Math.round(H-((t-mn)/(mx-mn))*(H-20)-10);return`<circle cx="${cx}" cy="${cy}" r="3" fill="hsl(${S.hue},65%,52%)"/><text x="${cx}" y="${cy-6}" text-anchor="middle" font-size="7.5" fill="hsl(${S.hue},40%,45%)">${t.toFixed(1)}</text>`;}).join('');
-  }else{bbtSVG.innerHTML=`<text x="200" y="58" text-anchor="middle" font-size="11" fill="hsl(${S.hue},30%,65%)">Log BBT temp to see your chart</text>`;}
-
-  // Symptoms
+    const mn2=Math.min(...temps)-0.15,mx2=Math.max(...temps)+0.15;
+    const W2=400,H2=110;
+    const pts=temps.map((t,i)=>Math.round(i/(temps.length-1)*(W2-20)+10)+','+Math.round(H2-((t-mn2)/(mx2-mn2))*(H2-20)-10)).join(' ');
+    bbtSVG.innerHTML='<polyline points="'+pts+'" fill="none" stroke="hsl('+S.hue+',65%,52%)" stroke-width="2" stroke-linejoin="round"/>'+
+      temps.map((t,i)=>{const cx=Math.round(i/(temps.length-1)*(W2-20)+10),cy=Math.round(H2-((t-mn2)/(mx2-mn2))*(H2-20)-10);return'<circle cx="'+cx+'" cy="'+cy+'" r="3" fill="hsl('+S.hue+',65%,52%)"/><text x="'+cx+'" y="'+(cy-6)+'" text-anchor="middle" font-size="7.5" fill="hsl('+S.hue+',40%,45%)">'+t.toFixed(1)+'</text>';}).join('');
+  }else{bbtSVG.innerHTML='<text x="200" y="58" text-anchor="middle" font-size="11" fill="hsl('+S.hue+',30%,65%)">Log BBT temp to see your chart</text>';}
   const sym={};logs.forEach(([,l])=>{if(l.symptoms)l.symptoms.forEach(s=>sym[s]=(sym[s]||0)+1);});
   const topS=Object.entries(sym).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  document.getElementById('ins-symptoms').innerHTML=topS.length?topS.map(([s,c])=>`<div class="bar-row"><div class="bar-lbl">${s}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(c/topS[0][1]*100)}%"></div></div><div class="bar-cnt">${c}</div></div>`).join(''):'<div style="color:var(--text-muted);font-size:0.83rem;">Log symptoms to see patterns!</div>';
-
-  // Moods
+  document.getElementById('ins-symptoms').innerHTML=topS.length?topS.map(([s,c])=>'<div class="bar-row"><div class="bar-lbl">'+s+'</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(c/topS[0][1]*100)+'%"></div></div><div class="bar-cnt">'+c+'</div></div>').join(''):'<div style="color:var(--text-muted);font-size:0.83rem;">Log symptoms to see patterns!</div>';
   const mo={};logs.forEach(([,l])=>{if(l.mood)mo[l.mood]=(mo[l.mood]||0)+1;});
   const topM=Object.entries(mo).sort((a,b)=>b[1]-a[1]).slice(0,5);
-  document.getElementById('ins-moods').innerHTML=topM.length?topM.map(([m,c])=>`<div class="bar-row"><div class="bar-lbl">${m}</div><div class="bar-track"><div class="bar-fill mint" style="width:${Math.round(c/topM[0][1]*100)}%"></div></div><div class="bar-cnt">${c}</div></div>`).join(''):'<div style="color:var(--text-muted);font-size:0.83rem;">Your mood trends will appear after a few logs.</div>';
+  document.getElementById('ins-moods').innerHTML=topM.length?topM.map(([m,c])=>'<div class="bar-row"><div class="bar-lbl">'+m+'</div><div class="bar-track"><div class="bar-fill mint" style="width:'+Math.round(c/topM[0][1]*100)+'%"></div></div><div class="bar-cnt">'+c+'</div></div>').join(''):'<div style="color:var(--text-muted);font-size:0.83rem;">Your mood trends will appear after a few logs.</div>';
 }
 
-// ══ SETTINGS ══
+// SETTINGS
+function updateCycleDayTiles(){
+  const cl=parseInt(document.getElementById('s-cycle').value)||S.cycleLength||28;
+  // Only auto-fill if the fields are empty (don't override user's custom values)
+  const fdEl=document.getElementById('s-fertile-day');
+  const ovEl=document.getElementById('s-ov-day');
+  if(!fdEl.value)fdEl.value=cl-18;   // default: 5 days before ovulation
+  if(!ovEl.value)ovEl.value=cl-13;   // default: 14 days before next period
+}
 function populateSettings(){
   document.getElementById('s-name').value=S.name||'';
   document.getElementById('s-appname').value=S.appName||'Luna';
@@ -1240,12 +1207,13 @@ function populateSettings(){
   document.getElementById('s-watergoal').value=S.waterGoal||8;
   document.getElementById('s-stepgoal').value=S.stepGoal||10000;
   document.getElementById('s-ttc').value=S.ttc||'no';
-  document.getElementById('s-fertileday').value=S.fertileStartDay||10;
-  document.getElementById('s-ovday').value=S.ovDay||15;
+  document.getElementById('s-fertile-day').value=S.fertileStartDay||10;
+  document.getElementById('s-ov-day').value=S.ovDay||15;
   const pn=S.phaseNames||{};
   ['period','follicular','fertile','ovulation','luteal-early','luteal'].forEach(p=>{const el=document.getElementById('pn-'+p);if(el)el.value=pn[p]||'';});
   document.querySelectorAll('.color-swatch').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.hue)===S.hue));
   renderMedSettings();
+  updateCycleDayTiles();
 }
 function setTheme(sw){document.querySelectorAll('.color-swatch').forEach(s=>s.classList.remove('active'));sw.classList.add('active');applyTheme(parseInt(sw.dataset.hue));}
 function addMed(){
@@ -1258,9 +1226,8 @@ function addMed(){
 }
 function renderMedSettings(){
   if(!S.medications||!S.medications.length){document.getElementById('med-settings-list').innerHTML='<div style="color:var(--text-muted);font-size:0.83rem;margin-bottom:0.5rem;">No medications yet.</div>';return;}
-  document.getElementById('med-settings-list').innerHTML=S.medications.map((m,i)=>`
-    <div class="pill-log-item"><div class="pill-name">${m.name}</div><div class="pill-time">${m.time}</div>
-    <button onclick="delMed(${i})" style="background:none;border:none;color:var(--text-muted);cursor:pointer;">✕</button></div>`).join('');
+  document.getElementById('med-settings-list').innerHTML=S.medications.map((m,i)=>
+    '<div class="pill-log-item"><div class="pill-name">'+m.name+'</div><div class="pill-time">'+m.time+'</div><button onclick="delMed('+i+')" style="background:none;border:none;color:var(--text-muted);cursor:pointer;">✕</button></div>').join('');
 }
 function delMed(i){S.medications.splice(i,1);renderMedSettings();}
 function saveSettings(){
@@ -1272,8 +1239,10 @@ function saveSettings(){
   S.waterGoal=parseInt(document.getElementById('s-watergoal').value)||8;
   S.stepGoal=parseInt(document.getElementById('s-stepgoal').value)||10000;
   S.ttc=document.getElementById('s-ttc').value;
-  S.fertileStartDay=parseInt(document.getElementById('s-fertileday').value)||10;
-  S.ovDay=parseInt(document.getElementById('s-ovday').value)||15;
+  const fd=parseInt(document.getElementById('s-fertile-day').value);
+  const od=parseInt(document.getElementById('s-ov-day').value);
+  if(fd&&fd>0)S.fertileStartDay=fd;
+  if(od&&od>0)S.ovDay=od;
   const pn={};
   ['period','follicular','fertile','ovulation','luteal-early','luteal'].forEach(p=>{const el=document.getElementById('pn-'+p);if(el&&el.value.trim())pn[p]=el.value.trim();});
   S.phaseNames=pn;
@@ -1290,30 +1259,21 @@ function exportJSON(){
 }
 function doImport(e){
   const f=e.target.files[0];if(!f)return;
-  const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);S=Object.assign(JSON.parse(JSON.stringify(DEF)),d);persist();applyTheme(S.hue);applyAppName();populateSettings();showToast('Backup restored! 🌸');}catch{showToast('Invalid backup file');}};r.readAsText(f);
+  const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);S=Object.assign(JSON.parse(JSON.stringify(DEF)),d);persist();applyTheme(S.hue);applyAppName();populateSettings();showToast('Backup restored! 🌸');}catch(err){showToast('Invalid backup file');}};r.readAsText(f);
 }
 function exportForDoctor(){
   const hc=S.historicalCycles||[];
   const logs=Object.entries(S.logs||{}).sort((a,b)=>a[0]<b[0]?1:-1).slice(0,60);
-  const rows=logs.map(([d,l])=>`<tr><td>${d}</td><td>${l.flow||'-'}</td><td>${l.mood||'-'}</td><td>${l.pain!=null?l.pain+'/10':'-'}</td><td>${l.temp?l.temp+'°C':'-'}</td><td>${(l.symptoms||[]).join(', ')||'-'}</td><td>${l.note||'-'}</td></tr>`).join('');
-  const cycleRows=hc.slice().reverse().slice(0,40).map(c=>`<tr><td>${c.start||'—'}</td><td>${c.end||'—'}</td><td>${c.duration||'—'}</td><td>${c.cycleLength||'—'}</td><td>${c.note||''}</td></tr>`).join('');
+  const rows=logs.map(([d,l])=>'<tr><td>'+d+'</td><td>'+(l.flow||'-')+'</td><td>'+(l.mood||'-')+'</td><td>'+(l.pain!=null?l.pain+'/10':'-')+'</td><td>'+(l.temp?l.temp+'°C':'-')+'</td><td>'+((l.symptoms||[]).join(', ')||'-')+'</td><td>'+(l.note||'-')+'</td></tr>').join('');
+  const cycleRows=hc.slice().reverse().slice(0,40).map(c=>'<tr><td>'+(c.start||'—')+'</td><td>'+(c.end||'—')+'</td><td>'+(c.duration||'—')+'</td><td>'+(c.cycleLength||'—')+'</td><td>'+(c.note||'')+'</td></tr>').join('');
   const allLens=(hc||[]).filter(c=>c.cycleLength).map(c=>c.cycleLength);
   const avg=allLens.length?Math.round(allLens.reduce((a,b)=>a+b,0)/allLens.length):S.cycleLength;
-  const html=`<!DOCTYPE html><html><head><title>${S.appName||'Luna'} — Health Report</title>
-  <style>body{font-family:Arial,sans-serif;padding:2rem;color:#333;max-width:900px;margin:0 auto;}h1{color:#C03060;}h2{color:#C03060;font-size:1rem;margin:1.5rem 0 0.5rem;}table{width:100%;border-collapse:collapse;font-size:0.8rem;margin-bottom:1rem;}th,td{padding:0.4rem 0.6rem;border:1px solid #ddd;text-align:left;}th{background:#FDE8EF;}p{font-size:0.85rem;color:#666;}</style></head>
-  <body><h1>${S.appName||'Luna'} — Cycle Health Report</h1>
-  <p><b>Name:</b> ${S.name||'—'} &nbsp;|&nbsp; <b>Avg cycle:</b> ${avg} days &nbsp;|&nbsp; <b>Avg period:</b> ${S.periodLength} days &nbsp;|&nbsp; <b>Generated:</b> ${new Date().toLocaleDateString()}</p>
-  <p><b>Total cycles tracked:</b> ${hc.length} &nbsp;|&nbsp; <b>Shortest:</b> ${allLens.length?Math.min(...allLens):'—'} days &nbsp;|&nbsp; <b>Longest:</b> ${allLens.length?Math.max(...allLens):'—'} days</p>
-  <h2>Cycle History (most recent first)</h2>
-  <table><tr><th>Period Start</th><th>Period End</th><th>Period Duration</th><th>Cycle Length</th><th>Notes</th></tr>${cycleRows}</table>
-  <h2>Daily Logs (most recent 60 days)</h2>
-  <table><tr><th>Date</th><th>Flow</th><th>Mood</th><th>Pain</th><th>BBT</th><th>Symptoms</th><th>Note</th></tr>${rows}</table>
-  </body></html>`;
+  const html='<!DOCTYPE html><html><head><title>'+(S.appName||'Luna')+' Health Report</title><style>body{font-family:Arial,sans-serif;padding:2rem;color:#333;max-width:900px;margin:0 auto;}h1{color:#C03060;}h2{color:#C03060;font-size:1rem;margin:1.5rem 0 0.5rem;}table{width:100%;border-collapse:collapse;font-size:0.8rem;margin-bottom:1rem;}th,td{padding:0.4rem 0.6rem;border:1px solid #ddd;text-align:left;}th{background:#FDE8EF;}p{font-size:0.85rem;color:#666;}</style></head><body><h1>'+(S.appName||'Luna')+' — Cycle Health Report</h1><p><b>Name:</b> '+(S.name||'—')+' &nbsp;|&nbsp; <b>Avg cycle:</b> '+avg+' days &nbsp;|&nbsp; <b>Avg period:</b> '+S.periodLength+' days &nbsp;|&nbsp; <b>Generated:</b> '+new Date().toLocaleDateString()+'</p><p><b>Total cycles tracked:</b> '+hc.length+' &nbsp;|&nbsp; <b>Shortest:</b> '+(allLens.length?Math.min(...allLens):'—')+' days &nbsp;|&nbsp; <b>Longest:</b> '+(allLens.length?Math.max(...allLens):'—')+' days</p><h2>Cycle History (most recent first)</h2><table><tr><th>Period Start</th><th>Period End</th><th>Duration</th><th>Cycle Length</th><th>Notes</th></tr>'+cycleRows+'</table><h2>Daily Logs (most recent 60 days)</h2><table><tr><th>Date</th><th>Flow</th><th>Mood</th><th>Pain</th><th>BBT</th><th>Symptoms</th><th>Note</th></tr>'+rows+'</table></body></html>';
   const w=window.open('','_blank');w.document.write(html);w.document.close();w.print();
 }
 function clearData(){if(!confirm('Delete ALL data? This cannot be undone.'))return;localStorage.removeItem('luna_v3');location.reload();}
 
-// ══ HISTORICAL DATA IMPORT ══
+// HISTORICAL DATA IMPORT
 const HISTORICAL_DATA=[
   {start:'2026-04-27',end:'2026-05-01',cycleLength:null},
   {start:'2026-03-31',end:'2026-04-05',cycleLength:27},
@@ -1327,7 +1287,7 @@ const HISTORICAL_DATA=[
   {start:'2025-08-17',end:'2025-08-24',cycleLength:27},
   {start:'2025-07-22',end:null,cycleLength:26},
   {start:'2025-06-15',end:'2025-06-21',cycleLength:37},
-  {start:'2025-05-15',end:'2025-05-21',cycleLength:31,note:'May 25 - noted'},
+  {start:'2025-05-15',end:'2025-05-21',cycleLength:31,note:'May 25 noted'},
   {start:'2025-04-15',end:'2025-04-21',cycleLength:30},
   {start:'2025-03-12',end:'2025-03-17',cycleLength:34},
   {start:'2025-02-11',end:null,cycleLength:29},
@@ -1392,7 +1352,7 @@ const HISTORICAL_DATA=[
   {start:'2019-05-18',end:null,cycleLength:28},
   {start:'2019-04-16',end:'2019-04-22',cycleLength:32},
   {start:'2019-03-16',end:'2019-03-21',cycleLength:31},
-  {start:'2019-02-10',end:'2019-02-27',cycleLength:34,note:'Two end dates recorded in original data'},
+  {start:'2019-02-10',end:'2019-02-27',cycleLength:34,note:'Two end dates in original data'},
   {start:'2019-01-14',end:null,cycleLength:27},
   {start:'2018-12-17',end:'2018-12-23',cycleLength:28},
   {start:'2018-11-16',end:'2018-11-22',cycleLength:31},
@@ -1412,10 +1372,9 @@ const HISTORICAL_DATA=[
   {start:'2017-08-06',end:null,cycleLength:29},
   {start:'2017-07-09',end:null,cycleLength:28},
   {start:'2017-06-07',end:'2017-06-13',cycleLength:32},
-  {start:'2017-05-12',end:'2017-05-17',cycleLength:26},
+  {start:'2017-05-12',end:'2017-05-17',cycleLength:26}
 ];
 
-// also add the May 8 symptom log as a daily log entry
 const MAY8_LOG={
   flow:'none',
   symptoms:['backpain','bloating','bodyaches','cramps','cravings','dizziness','headache','insomnia','jointpain','neckache','tender'],
@@ -1425,89 +1384,64 @@ const MAY8_LOG={
 };
 
 function runHistoricalImport(){
-  if(S.imported){document.getElementById('import-modal').classList.remove('active');return;}
+  if(S.imported){document.getElementById('import-modal').classList.remove('active');initPin();return;}
   document.getElementById('import-modal').classList.add('active');
-  const log=document.getElementById('import-log');
+  const logEl=document.getElementById('import-log');
   const bar=document.getElementById('import-bar');
   const total=HISTORICAL_DATA.length;
   let i=0;
-  log.innerHTML='Starting import of '+total+' cycles…\n';
-
+  logEl.textContent='Starting import of '+total+' cycles…\n';
   function importNext(){
     if(i>=total){
-      // Add the May 8 symptom log
       if(!S.logs['2017-05-08'])S.logs['2017-05-08']=MAY8_LOG;
-      // Recalc avg cycle from real data
       const lens=HISTORICAL_DATA.filter(c=>c.cycleLength&&c.cycleLength>14&&c.cycleLength<90).map(c=>c.cycleLength);
-      if(lens.length){
-        const recent=lens.slice(-12);
-        S.cycleLength=Math.round(recent.reduce((a,b)=>a+b,0)/recent.length);
-      }
-      // Set last period date to most recent
-      // Set fertile start day (day 10) and ovulation day (day 15) based on her data:
-      // Last period: Apr 27 → Fertile started May 6 (day 10) → Ovulation May 11 (day 15)
+      if(lens.length){const recent=lens.slice(-12);S.cycleLength=Math.round(recent.reduce((a,b)=>a+b,0)/recent.length);}
+      S.lastPeriodDate='2026-04-27';
+      S.periodLength=6;
       S.fertileStartDay=10;
       S.ovDay=15;
-      S.lastPeriodDate='2026-04-27';
-      S.periodLength=6;// avg from data
       S.imported=true;
       persist();
       bar.style.width='100%';
-      log.innerHTML+='\n✓ All '+total+' cycles imported!\n✓ May 8 symptom log saved\n✓ Average cycle calculated: '+S.cycleLength+' days\n✓ Last period date set to April 27, 2026\n\nYour history goes all the way back to May 2017 🌸';
+      logEl.textContent+='\n✓ All '+total+' cycles imported!\n✓ May 8 symptom log saved\n✓ Average cycle: '+S.cycleLength+' days\n✓ Last period: April 27, 2026\n\nYour history goes all the way back to May 2017 🌸';
       document.getElementById('import-done-btn').style.display='block';
       return;
     }
     const c=HISTORICAL_DATA[i];
     if(!S.historicalCycles)S.historicalCycles=[];
-    // Calculate duration
     let dur=null;
     if(c.start&&c.end)dur=Math.round((new Date(c.end)-new Date(c.start))/86400000)+1;
     S.historicalCycles.push({start:c.start,end:c.end||null,duration:dur,cycleLength:c.cycleLength||null,note:c.note||null});
-    // Also mark period days in logs
     if(c.start&&dur){
       for(let d=0;d<dur&&d<15;d++){
-        const ds=new Date(c.start);ds.setDate(ds.getDate()+d);
-        const key=ds.toISOString().split('T')[0];
+        const dt=parseLocalDate(c.start);dt.setDate(dt.getDate()+d);
+        const key=dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');
         if(!S.logs[key])S.logs[key]={};
-        if(!S.logs[key].flow){
-          S.logs[key].flow=d===0||d===1||d===2?'medium':d<dur-1?'light':'spotting';
-          S.logs[key].ts=Date.now();
-        }
+        if(!S.logs[key].flow){S.logs[key].flow=d<3?'medium':d<dur-1?'light':'spotting';S.logs[key].ts=Date.now();}
       }
     }
     i++;
-    const pct=Math.round(i/total*100);
-    bar.style.width=pct+'%';
-    const yr=c.start?c.start.substring(0,4):'?';
-    log.innerHTML+='✓ '+fmtDate(c.start)+' (cycle '+(c.cycleLength||'?')+' days)\n';
-    log.scrollTop=log.scrollHeight;
-    setTimeout(importNext,18);
+    bar.style.width=Math.round(i/total*100)+'%';
+    logEl.textContent+='✓ '+fmtDate(c.start)+' ('+( c.cycleLength||'?')+' day cycle)\n';
+    logEl.scrollTop=logEl.scrollHeight;
+    setTimeout(importNext,16);
   }
   importNext();
 }
 
 function closeImportModal(){
   document.getElementById('import-modal').classList.remove('active');
-  updateHome();
-  showPage('history');
-}
-
-// ══ TOAST ══
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
-
-// ══ INIT ══
-load();
-document.getElementById('journal-date').value=today();
-// Run import if not yet done
-if(!S.imported){setTimeout(runHistoricalImport,800);}
-else{initPin();}
-
-// After import, show pin
-function closeImportModal(){
-  document.getElementById('import-modal').classList.remove('active');
   initPin();
   setTimeout(()=>{updateHome();showPage('history');},200);
 }
+
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+
+// INIT
+load();
+document.getElementById('journal-date').value=today();
+if(!S.imported){setTimeout(runHistoricalImport,800);}
+else{initPin();}
 </script>
 </body>
 </html>
