@@ -361,6 +361,18 @@ label{font-size:0.78rem;font-weight:500;color:var(--text-muted);display:block;ma
       </div>
     </div>
   </div>
+  <!-- PERIOD COUNTDOWN CARD -->
+  <div id="period-countdown-card" style="background:linear-gradient(135deg,var(--rose-light),hsl(calc(var(--hue)+20),75%,92%));border-radius:18px;border:1px solid var(--rose-border);padding:1.1rem 1.4rem;margin-bottom:0.9rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div>
+      <div style="font-size:0.68rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.3rem;">Next period predicted</div>
+      <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--text);font-weight:400;" id="countdown-date-label">—</div>
+      <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;" id="countdown-sub">—</div>
+    </div>
+    <div style="text-align:center;flex-shrink:0;">
+      <div style="font-family:'Fraunces',serif;font-size:2.4rem;line-height:1;color:var(--rose-deep);" id="countdown-number">—</div>
+      <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-top:0.15rem;" id="countdown-unit">days</div>
+    </div>
+  </div>
   <div class="home-grid-3">
     <div class="metric-tile"><div class="metric-val" id="h-temp">—</div><div class="metric-label">BBT °C</div><div class="metric-sub">today</div></div>
     <div class="metric-tile"><div class="metric-val" id="h-water">—</div><div class="metric-label">Water</div><div class="metric-sub" id="h-water-sub">glasses</div></div>
@@ -835,6 +847,8 @@ function refreshAll(){updateHome();}
 function today(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 function parseLocalDate(ds){if(!ds)return null;const[y,m,d]=ds.split('-').map(Number);return new Date(y,m-1,d);}
 function daysBetween(aStr,bStr){return Math.round((parseLocalDate(bStr)-parseLocalDate(aStr))/86400000);}
+function addDays(ds,n){const d=parseLocalDate(ds);d.setDate(d.getDate()+n);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function fmtDateShort(ds){if(!ds)return'';try{return parseLocalDate(ds).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}catch(e){return'';}}
 function getFertileStartDay(){return S.fertileStartDay||10;}
 function getOvDay(){return S.ovDay||15;}
 function getCycleDay(){
@@ -882,7 +896,9 @@ function updateHome(){
   document.getElementById('home-ring').style.setProperty('--fill-pct',Math.round(day/S.cycleLength*100)+'%');
   document.getElementById('home-phase-pill').className='status-pill '+info.pill;
   document.getElementById('home-phase-pill').textContent=phaseName(phase);
-  document.getElementById('home-next-pill').textContent='Period in ~'+dLeft+' day'+(dLeft===1?'':'s');
+  const nextPeriodDs=S.lastPeriodDate?addDays(S.lastPeriodDate,S.cycleLength):'';
+  const nextPeriodLabel=nextPeriodDs?' — '+fmtDateShort(nextPeriodDs):'';
+  document.getElementById('home-next-pill').textContent='Period in ~'+dLeft+' day'+(dLeft===1?'':'s')+nextPeriodLabel;
   const tk=today(),lg=S.logs[tk]||{};
   document.getElementById('h-temp').textContent=lg.temp||'—';
   document.getElementById('h-water').textContent=lg.water||'0';
@@ -895,9 +911,29 @@ function updateHome(){
   document.getElementById('home-today-log').textContent=parts.length?parts.join(' · '):(lg.flow?'Logged ✓':'Nothing logged yet today.');
   const fsd=getFertileStartDay(),ovDay=getOvDay(),dToOv=ovDay-day,dToFertile=fsd-day;
   document.getElementById('home-upcoming').innerHTML=
-    '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--rose-deep);flex-shrink:0"></span><span>Period in ~'+dLeft+' day'+(dLeft===1?'':'s')+'</span></div>'+
+    '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--rose-deep);flex-shrink:0"></span><span>Period in ~'+dLeft+' day'+(dLeft===1?'':'s')+(nextPeriodDs?' <span style="color:var(--text-light);font-size:0.78rem;">('+fmtDateShort(nextPeriodDs)+')</span>':'')+'</span></div>'+
     '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint);flex-shrink:0"></span><span>'+(dToFertile>0?'Fertile window in ~'+dToFertile+' day'+(dToFertile===1?'':'s'):dToFertile<=0&&dToOv>=0?'Fertile window now 🌿':'Fertile window passed')+'</span></div>'+
     '<div style="display:flex;align-items:center;gap:0.4rem;"><span style="width:7px;height:7px;border-radius:50%;background:var(--mint-deep);flex-shrink:0"></span><span>'+(dToOv>0?'Ovulation in ~'+dToOv+' day'+(dToOv===1?'':'s'):dToOv===0?'Ovulation today 🌿':'Ovulation was '+Math.abs(dToOv)+' day'+(Math.abs(dToOv)===1?'':'s')+' ago')+'</span></div>';
+  // Update countdown card
+  if(nextPeriodDs){
+    const daysLeft=dLeft;
+    document.getElementById('countdown-date-label').textContent=fmtDateShort(nextPeriodDs);
+    if(daysLeft<=0){
+      document.getElementById('countdown-number').textContent='Today';
+      document.getElementById('countdown-unit').textContent='';
+      document.getElementById('countdown-sub').textContent='Your period may be starting';
+    }else if(daysLeft===1){
+      document.getElementById('countdown-number').textContent='1';
+      document.getElementById('countdown-unit').textContent='day away';
+      document.getElementById('countdown-sub').textContent='Your period is expected tomorrow';
+    }else{
+      document.getElementById('countdown-number').textContent=daysLeft;
+      document.getElementById('countdown-unit').textContent='days away';
+      document.getElementById('countdown-sub').textContent='Based on your average '+S.cycleLength+'-day cycle';
+    }
+  }else{
+    document.getElementById('period-countdown-card').style.display='none';
+  }
   document.getElementById('care-title').textContent='✦ Self-care for '+phaseName(phase);
   document.getElementById('care-list').innerHTML=info.care.map(c=>'<div class="care-item">'+c+'</div>').join('');
   if(day>S.cycleLength+3){
